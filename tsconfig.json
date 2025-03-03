@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "types": ["node", "cypress"],
+        "paths": {
+            "@/*": ["src/*"],
+            "@app/*": ["src/app/*"],
+            "@query/*": ["src/query/*"],
+            "@assets/*": ["src/assets/*"],
+            "@store/*": ["src/store/*"]
+        },
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules",
+                "options": {
+                    "postCssOptions": {
+                        "useConfig": true
+                    }
+                }
+            }
+        ]
+    },
+    "include": ["src", "cypress/**/*.ts", "cypress.config.ts"],
+    "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+}
